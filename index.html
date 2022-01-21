@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Crash Course</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        body{
+            font-size: 17p;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgray;
+            line-height: 1.5em;
+        }
+        header{
+            background: darkcyan;
+            color: whitesmoke;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px black solid;
+        }
+        #container{
+            margin: auto;
+        }
+        #box{
+            background: black;
+            color: white;
+            width: 500px;
+            height: 90px;
+            padding: 40px;
+            text-align: center;
+        }
+        #box2{
+            background: red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <h1>jQuery Crash Course</h1>
+    </header>
+
+    <br>
+
+    <div id="container">
+        <button id="btnFadeOut"> Fade Out </button>
+        <button id="btnFadeIn"> Fade In </button>
+        <button id="btnFadeTog"> Fade Toggle </button>
+        
+        <hr>
+
+        <button id="btnSlideUp"> Slide Up </button>
+        <button id="btnSlideDown"> Slide Down</button>
+        <button id="btnSlideTog"> Slide Tog </button>
+        <button id="btnStop"> Stop </button>
+        <hr>
+
+        <div id="box"><h1>Hello World</h1></div>
+
+        <hr>
+
+        <button id="moveLeft"> Move Left </button>
+        <button id="moveRight"> Move Right </button>
+        <button id="moveAround"> Move Around </button>
+        <br>
+        <div id="box2"></div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+
+            $('#btnFadeOut').click(function(){
+                $('#box').fadeOut(2000, function(){
+                    $('#btnFadeOut').text('Its gone');
+                });
+            })
+            
+            $('#btnFadeIn').click(function(){
+                $('#box').fadeIn(2000);
+            })
+
+            $('#btnFadeTog').click(function(){
+                $('#box').fadeToggle(1000)
+            })
+            
+            $('#btnSlideUp').click(function(){
+                $('#box').slideUp(1000)
+            })
+
+            $('#btnSlideDown').click(function(){
+                $('#box').slideDown(1000)
+            })
+
+            $('#btnSlideTog').click(function(){
+                $('#box').slideToggle(1000)
+            })
+
+            $('#btnStop').click(function(){
+                $('#box').stop(2000)
+            })
+
+            $('#moveRight').click(function(){
+                $('#box2').animate({
+                    left: 500,
+                    height: '30px',
+                    width: '200px'
+                })
+            })
+
+            $('#moveLeft').click(function(){
+                $('#box2').animate({
+                    left: -10 
+                })
+            })
+
+            $('#moveAround').click(function(){
+                var box = $('#box2');
+                box.animate({
+                    left: 300
+                })
+                box.animate({
+                    top: 300
+                })
+                box.animate({
+                    left: 0,
+                    top: 300
+                })
+                box.animate({
+                    left: 0,
+                    top: 0
+                })
+            })
+   
+
+        });
+        
+
+    
+
+    </script>
+
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- //$('#heading1').hide();
+//$('p span').css('color', 'red');
+
+$('ul#list li:first').css('color','blue')
+$('ul#list li:last').css('color','blue')
+$('ul#list li:even').css('background-color','darkblue')
+$('ul#list li:nth-child(3n)').css('background-color','yellow')
+
+$(':text').hide();
+
+$('[href]').css('color','red')
+$('a[href="http://yahoo.com"]').css('color','green') -->
+
+
+<!-- <div id="container">
+    <h1 id="heading1">Heading One</h1>
+    <p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, 
+        harum at sed sit <span> sequi eaque. Quibusdam hic, excepturi ex ea, maxime molestiae quod 
+        dolorem dolorum explicabo</span> voluptatibus non a fugit!
+    </p>
+
+
+    <h1 id="heading2">Heading Two</h1>
+    <p id="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, 
+        harum at sed sit <span> sequi eaque. Quibusdam hic, excepturi ex ea, maxime molestiae quod 
+        dolorem dolorum explicabo</span> voluptatibus non a fugit!
+    </p>
+
+    <ul id="list">
+            <li>List Item:</li>
+            <li>List Item:</li>
+            <li>List Item:</li>
+            <li>List Item:</li>
+            <li>List Item:</li>
+            <li>List Item:</li>
+            <li>List Item:</li>
+    </ul>
+
+    <input type="button" value="Button 1">
+    <input type="submit" value="Submit">
+    <input type="text">
+    <br>
+    <a href="http://google.com">Google</a>
+    <a href="http://yahoo.com">Yahoo</a>
+
+</div> -->
